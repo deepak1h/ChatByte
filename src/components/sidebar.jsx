@@ -3,7 +3,7 @@ import Navbar from './navbar'
 
 const Sidebar = () => {
   return (
-    <div className='sidebar'><Navbar></Navbar></div>
+    <div className='sidebar'><Navbar/></div>
   )
 }
 
