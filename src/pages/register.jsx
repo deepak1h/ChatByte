@@ -1,5 +1,5 @@
 import React from 'react'
-import Photo from "../image/upload.jpg"
+import Photo from "../image/upload.png"
 import "../css/style.css"
 
 const Register = () => {

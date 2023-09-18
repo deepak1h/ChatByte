@@ -11,9 +11,10 @@
     border-color: transparent;
     outline: none;
     padding: 5px;
-    
-    ::placeholder{
-        color: lightgray;
+    width: 100%;
+    color: white;
+    &::placeholder{
+        color: rgba(255, 249, 249, 0.255);
     
     }
 }

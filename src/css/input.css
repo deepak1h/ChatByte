@@ -1,0 +1,49 @@
+.input{
+    background-color: white;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.input input{
+    width:100%;
+    border: none;
+    outline: none;
+    color: rgb(51, 51, 54);
+    font-size: 15px;
+    font-family: 'Segoe UI';
+
+    &::placeholder{
+        color: lightgrey;
+    }
+}
+
+.send{
+    
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    
+}
+
+.send img{
+    width:24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.send button{
+    background-color: #7b96ec;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    
+}
+

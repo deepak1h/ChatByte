@@ -33,15 +33,23 @@
   }
   
   .navbar button {
-      border: none;
+    background-color: #5f6887;
+    border: none;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+
+      /* border: none;
       border-radius: 10px;
       cursor: pointer;
       height: 20px;
-      width: 50px;
+      width: 50px; */
     }
   
     .navbar img{
-  
     width: 25px;
     height: 25px;
   }
