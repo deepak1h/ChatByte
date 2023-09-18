@@ -1,6 +1,6 @@
 import React from 'react'
 import Photo from "../image/upload.jpg"
-import "./style.css"
+import "../css/style.css"
 
 const Register = () => {
   return (

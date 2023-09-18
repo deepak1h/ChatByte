@@ -1,0 +1,25 @@
+
+.home {
+    background-color: #a7bcff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.container {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    width:70%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+    }
+
+
+
+
+
+
+
+

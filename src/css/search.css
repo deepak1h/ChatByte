@@ -1,0 +1,58 @@
+.search{
+
+    border: none;
+    border-bottom: 1px solid #28273d;
+   
+
+}
+
+.searchForm input{
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    padding: 5px;
+    
+    ::placeholder{
+        color: lightgray;
+    
+    }
+}
+
+.userChat{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Segoe UI';
+
+    &:hover{
+        background-color: #32304b;
+    }
+
+}
+
+
+
+.userChat p{
+
+    font-size: 10px;
+    color: lightgrey;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+.userChat span{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.userChat img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+

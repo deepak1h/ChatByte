@@ -1,5 +1,6 @@
 import React from 'react'
 import Profile from '../image/Profile.png'
+import '../css/navbar.css'
 
 const Navbar = () => {
   return (
@@ -7,11 +8,11 @@ const Navbar = () => {
       <span className='logo1'>ChatByte</span>
       <div className='user'>
         <img src={Profile} alt="" />
-        <span className='usernav'>user</span>
+        <span className='usernav'>Deepak</span>
         <button>logout</button>
       </div>
     </div>
   )
 }
 
-export default Navbar
+export default Navbar 
