@@ -1,0 +1,7 @@
+
+.chats {
+    overflow-y:scroll ;
+}
+.chats::-webkit-scrollbar { 
+    display: none; 
+}

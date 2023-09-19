@@ -1,4 +1,11 @@
 .messages{
     background-color: rgb(207, 197, 246);
     height: 100%;
+    overflow: scroll;
+
+    
+}
+
+.messages::-webkit-scrollbar{
+    display: none;
 }
