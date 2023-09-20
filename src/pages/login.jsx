@@ -27,10 +27,11 @@ const Login = () => {
         const errorMessage = error.message;
         
         const errorElement = document.getElementById('error');
+
         console.log(errorElement);
-        if (1) {
-            errorElement.innerText = "lol";
-            console.log("baby")
+
+        if (errorElement) {
+            errorElement.innerText = errorCode;
         }
         console.error(errorMessage,errorCode)  
   }
