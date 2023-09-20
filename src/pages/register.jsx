@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import Photo from "../image/upload.png"
 import "../css/style.css"
 import {createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth , storage} from '../firebase'
+import { auth , storage, db} from '../firebase'
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
 
 const Register = () => {
   const [error,setErr] = useState(false);
@@ -20,7 +21,7 @@ const Register = () => {
       setErr(true)
       const result = await createUserWithEmailAndPassword(auth, email, password)
 
-      const storageRef = ref(storage, 'profile/'+email+".jpg");
+      const storageRef = ref(storage, 'profile/'+result.user.uid+".jpg");
       const uploadTask = uploadBytesResumable(storageRef, photo);
 
       // Listen for state changes, errors, and completion of the upload.
@@ -49,10 +50,20 @@ const Register = () => {
           // Upload completed successfully, now we can get the download URL
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             console.log('File available at', downloadURL);
+
             await updateProfile(result.user,{
               displayName: name,
               photoURL: downloadURL
             })
+
+            await setDoc(doc(db, "users", result.user.uid), {
+              uid: result.user.uid,
+              name,
+              email,
+              photoURL: downloadURL,
+            });
+
+            await setDoc(doc(db,userChats, result.user.uid),{});
           });
         }
       );
