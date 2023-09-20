@@ -61,10 +61,10 @@ Before you begin, ensure you have met the following requirements:
 5. Start the application:
 
    ```
-   npm start
+   npm run dev
    ```
 
-6. Open your web browser and access the application at `http://localhost:3000`.
+6. Open your web browser and access the application at `http://localhost:XXXX`.
 
 ## Usage
 
@@ -89,11 +89,5 @@ Contributions are welcome! If you'd like to contribute to ChatByte, please follo
 3. Make your changes and commit them: `git commit -m 'Add new feature'`.
 4. Push to your forked repository: `git push origin feature/new-feature`.
 5. Create a pull request to the main repository.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 Thank you for using ChatByte! If you have any questions or encounter any issues, please feel free to contact us. Happy chatting!
