@@ -10,7 +10,7 @@
 .formWrapper {
     background-color: white;
     padding: 20px 60px;
-    border-radius: 10px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -45,14 +45,16 @@
     font-weight: bold;
     border: none;
     cursor: pointer;
+    border-radius: 25px;
   }
   
 .formContainer label {
     display: flex;
     align-items: center;
-    color: #8da4f1;
+    color: #8082887a;
     font-size: 12px;
     cursor: pointer;
+    gap:10px
   }
   .formContainer img {
     width: 40px;
@@ -72,4 +74,20 @@
     &::placeholder {
       color: rgb(175, 175, 175);
     }
+  }
+
+  .errorMessage{
+    color: red;
+    font-family: 'Segoe UI';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .successMessage{
+    color: rgb(96, 220, 75);
+    font-family: 'Segoe UI';
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

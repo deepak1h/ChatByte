@@ -5,8 +5,8 @@ import Home from "./pages/home"
 function App() {
   return(
     //<Login/>
-    //<Register/>
-    <Home/>
+    <Register/>
+    //<Home/>
   );
 }
 

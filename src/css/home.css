@@ -9,7 +9,7 @@
 
 .container {
     border: 1px solid rgb(0, 0, 0);
-    border-radius: 10px;
+    border-radius: 25px;
     width:70%;
     height: 80%;
     display: flex;
