@@ -32,7 +32,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/ChatByte.git
+   git clone https://github.com/deepak1h/ChatByte.git
    ```
 
 2. Navigate to the project directory:
