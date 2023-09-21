@@ -5,7 +5,7 @@ import {createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth , storage, db} from '../firebase'
 import {ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 
 const Register = () => {
   const [error,setErr] = useState(false);
@@ -66,7 +66,7 @@ const Register = () => {
               photoURL: downloadURL, 
             });
 
-            await setDoc(doc(db,userChats, result.user.uid),{});
+            await setDoc(doc(db,"userChats", result.user.uid),{});
           });
         }
       );
@@ -79,7 +79,6 @@ const Register = () => {
           successElement.innerText = "you are registerd";
         }
       console.log("success")
-      navigate("/")
       
     }
     catch(error){
@@ -116,7 +115,7 @@ const Register = () => {
           {success && <span id="success-message" className="successMessage"></span>}
         </form>
         <p>
-          You do have an account? Login
+          You do have an account?  <Link to="/login">Login</Link>
         </p>
       </div>
     </div>

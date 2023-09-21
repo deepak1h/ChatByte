@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link} from 'react-router-dom';
 
 const Login = () => {
 
@@ -17,7 +17,6 @@ const Login = () => {
     console.log(email)
     
     try{
-    setErr(false);
     await signInWithEmailAndPassword(auth, email, password)
     navigate('/');
   }
@@ -46,10 +45,10 @@ const Login = () => {
           <input required type="email" placeholder="email" />
           <input required type="password" placeholder="password" />
         <button>Sign in</button>
-        {error && <span id="error" className="errorMessage"></span>}
+        <span id="error" className="errorMessage"></span>
       </form>
       <p>
-        You don't have an account? Signup
+        You don't have an account? <Link to="/register">Signup</Link>
       </p>
     </div>
   </div>

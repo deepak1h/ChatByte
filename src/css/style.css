@@ -69,7 +69,10 @@
 .formWrapper input {
     padding: 15px;
     border: none;
+    outline-color:#a7bcff;
+
     width: 250px;
+
     border-bottom: 1px solid #a7bcff;
     &::placeholder {
       color: rgb(175, 175, 175);
