@@ -1,22 +1,30 @@
 .search{
 
     border: none;
-    border-bottom: 1px solid #28273d;
-   
+    border-bottom: 1px solid #7c78ae;
+}
 
+.search span{
+    font-family:'Segoe UI';
+    color: rgb(187, 150, 165);
+    font-size: x-small;
+    padding: 10px;
 }
 
 .searchForm input{
-    background-color: transparent;
+    
+    background-color: #4b4972;
     border-color: transparent;
-    outline: none;
-    padding: 5px;
+
+    padding: 5px 10px;
     width: 100%;
     color: white;
+
     &::placeholder{
-        color: rgba(255, 249, 249, 0.255);
+        color: rgba(255, 255, 255, 0.255);
     
     }
+
 }
 
 .userChat{
@@ -34,8 +42,6 @@
 
 }
 
-
-
 .userChat p{
 
     font-size: 10px;
@@ -45,8 +51,8 @@
 
 }
 
-
 .userChat span{
+    color: white;
     font-weight: 400;
     font-size: 14px;
 }
@@ -56,4 +62,3 @@
     width: 30px;
     border-radius: 50%;
 }
-
