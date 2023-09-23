@@ -4,11 +4,14 @@ import '../css/chats.css'
 import {AuthContext} from "../context/authContext"
 import { doc, onSnapshot } from 'firebase/firestore'
 import { db } from '../firebase'
+import { ChatContext } from '../context/chatContext'
 
 const Chats = () => {
 
   const [chats, setChats] = useState([])
+
   const {currentUser} = useContext(AuthContext)
+  const {dispatch} = useContext(ChatContext)
 
   useEffect(()=> {
     
@@ -29,11 +32,17 @@ const Chats = () => {
 
   console.log(chats)
 
+  const handleSelect = (userinfo) => {
+    console.log("selected")
+    console.log(userinfo)
+    dispatch({type: "CHANGE_USER", payload: userinfo})
+  }
+
   return (
 
     <div className='chats'>  
-      {Object.entries(chats)?.map(([chatID, chatData]) =>(
-        <div className='userChat' key={chatID}>
+      {Object.entries(chats)?.map(([chatId, chatData]) =>(
+        <div className='userChat' key={chatId} onClick={ () => handleSelect(chatData.userInfo)}>
           <img src={chatData.userInfo.photoURL}></img>
           <div className='userChatInfo'>
             <span >{chatData.userInfo.name}</span>

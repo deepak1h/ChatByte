@@ -3,6 +3,7 @@ import '../css/search.css'
 import {collection, getDocs,getDoc, query, serverTimestamp, setDoc, where, updateDoc, doc} from 'firebase/firestore'
 import {db} from "../firebase"
 import { AuthContext } from '../context/authContext'
+import { ChatContext } from '../context/chatContext'
 
 
 const Search = () => {
@@ -10,6 +11,7 @@ const Search = () => {
   const [user, setUser] = useState(null)
   const [err, setErr] = useState(null)
   const {currentUser} = useContext(AuthContext)
+  const {dispatch} = useContext(ChatContext)
 
   const handlesearch = async ()=>{
     const q = query(collection(db,"users"),where("email","==",username));
@@ -34,8 +36,11 @@ const Search = () => {
     event.code === 'Enter' && handlesearch()
   }
 
-  const handleSelect = async () => {
+  const handleSelect = async (userinfo) => {
     console.log("started")
+
+    dispatch({type: "CHANGE_USER", payload: userinfo})
+
     const combinedId = currentUser.uid > user.uid ? currentUser.uid+user.uid : user.uid+currentUser.uid;
     console.log(combinedId)
     try{
@@ -65,6 +70,8 @@ const Search = () => {
         },
         [combinedId+".date"]: serverTimestamp()
       });
+
+
       console.log(currentUser,"creating other userchats")
       await updateDoc(doc(db,"userChats", user.uid), {
         [combinedId+".userInfo"]: {
@@ -74,8 +81,11 @@ const Search = () => {
         },
         [combinedId+".date"]: serverTimestamp()
       });
+
+
       console.log("created")
       }
+      
     catch(err){
       console.log(err)
     }
@@ -92,7 +102,7 @@ const Search = () => {
         value={username}/> 
       </div>
       {err && <span>user not found</span>}
-      {user && <div onClick={ handleSelect } className='userChat'>
+      {user && <div onClick={ () => handleSelect({uid:user.uid, photoURL: user.photoURL,name: user.name}) } className='userChat'>
         <img src={ user.photoURL }></img>
         <div  className='userChatInfo'>
           <span>{user.name}</span>
