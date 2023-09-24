@@ -16,11 +16,11 @@ const Input = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
   const [file, setfile] = useState(null);
-
+  
   const storageRef = ref(storage, 'data/' + uuid());
-  const uploadTask = uploadBytesResumable(storageRef, img);
 
   const handleSend = async ()=>{
+    
     if(file){
         
     }
@@ -28,10 +28,12 @@ const Input = () => {
             //upload photo 
             console.log("image found")
             console.log(img)
+            const uploadTask = uploadBytesResumable(storageRef, img);
             uploadTask.on(
 
               'state_changed',
               (snapshot) => {
+                console.log("image uploaded1", img)
                 // Observe state change events such as progress, pause, and resume
                 // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -50,8 +52,10 @@ const Input = () => {
                 setErr(true)
               },
               () => {
+                console.log("image uploded 2", img)
                 // Upload completed successfully, now we can get the download URL
                 getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+                  console.log("image uploaded 3", img)
                   console.log('File available at', downloadURL);
 
                   console.log(text, currentUser.uid, Timestamp.now(), downloadURL)
@@ -73,7 +77,7 @@ const Input = () => {
             );
 
     }
-    else{
+    else if(text){
       console.log(data.chatId)
       await updateDoc(doc(db,"chats", data.chatId),{
         messages: arrayUnion({

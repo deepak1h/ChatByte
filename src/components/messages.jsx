@@ -14,9 +14,9 @@ const Messages = () => {
       doc.exists() && setMessage(doc.data().messages);
     });
 
-    // return () => {
-    //   unsubscribe();
-    // }
+    return () => {
+      unsubscribe();
+    }
    
     
   }, [data.chatId]);
