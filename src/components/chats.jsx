@@ -41,7 +41,7 @@ const Chats = () => {
   return (
 
     <div className='chats'>  
-      {Object.entries(chats)?.map(([chatId, chatData]) =>(
+      {Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map(([chatId, chatData]) =>(
         <div className='userChat' key={chatId} onClick={ () => handleSelect(chatData.userInfo)}>
           <img src={chatData.userInfo.photoURL}></img>
           <div className='userChatInfo'>
