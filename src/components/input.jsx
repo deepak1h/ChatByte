@@ -114,10 +114,10 @@ const Input = () => {
         value={text}
         /> 
         <div className="send">
-          <img src={Upload} alt=""  />
+          <img src={Attach} alt=""  />
           <input style={{ display: "none" }} type="file" id="file" onChange={event=>setImg(event.target.files[0])} />
           <label htmlFor="file">
-            <img src={Attach} alt="" />
+            <img src={Upload} alt="" />
           </label>
           <button onClick={handleSend}>Send</button>
         </div>

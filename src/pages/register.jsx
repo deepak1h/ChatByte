@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Photo from "../image/upload.png"
+import Logo from "../image/icon.png"
 import "../css/style.css"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage, db } from '../firebase'
@@ -102,7 +103,10 @@ const Register = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">ChatByte</span>
+        <div className='icon'>
+          <img src={Logo} alt="" />
+          <span className="logo">ChatByte</span>
+        </div>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>
           <input required type="text" placeholder="name" />
