@@ -55,9 +55,13 @@ body, html {
     height: 90%;
     display: flex;
     border: 20px double var(--cx);
+    overflow: scroll;
     }
 
-
+    .container::-webkit-scrollbar{
+      display: none; 
+  }
+  
 
 
 

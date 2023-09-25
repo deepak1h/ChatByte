@@ -37,20 +37,20 @@ const Search = () => {
   }
 
   const handleSelect = async (userinfo) => {
-    console.log("started")
+    // console.log("started")
 
     dispatch({type: "CHANGE_USER", payload: userinfo})
 
-    const combinedId = currentUser.uid > user.uid ? currentUser.uid+user.uid : user.uid+currentUser.uid;
-    console.log(combinedId)
+    const combinedId = currentUser?.uid > user?.uid ? currentUser?.uid+user?.uid : user?.uid+currentUser?.uid;
+    //console.log(combinedId)
     try{
       const result = await getDoc(doc(db, "chats", combinedId))
-      console.log(result)
+      //console.log(result)
       if(!result.exists()){
         console.log("not exist creating")
         await setDoc(doc(db,"chats",combinedId), {messages: []})
       }
-      console.log(user,"creating userchats")
+      //console.log(user,"creating userchats")
         //create userChats
         /* 
         userChats: 
@@ -62,28 +62,28 @@ const Search = () => {
               lastmessage:"",
               date: date
         */
-      await updateDoc(doc(db,"userChats", currentUser.uid), {
+      await updateDoc(doc(db,"userChats", currentUser?.uid), {
         [combinedId+".userInfo"]: {
-          uid:user.uid,
-          photoURL: user.photoURL,
-          name: user.name
+          uid:user?.uid,
+          photoURL: user?.photoURL,
+          name: user?.name
         },
         [combinedId+".date"]: serverTimestamp()
       });
 
 
-      console.log(currentUser,"creating other userchats")
-      await updateDoc(doc(db,"userChats", user.uid), {
+      //console.log(currentUser,"creating other userchats")
+      await updateDoc(doc(db,"userChats", user?.uid), {
         [combinedId+".userInfo"]: {
-          uid:currentUser.uid,
-          photoURL: currentUser.photoURL,
-          name: currentUser.displayName
+          uid:currentUser?.uid,
+          photoURL: currentUser?.photoURL,
+          name: currentUser?.displayName
         },
         [combinedId+".date"]: serverTimestamp()
       });
 
 
-      console.log("created")
+      //console.log("created")
       }
       
     catch(err){
@@ -98,14 +98,14 @@ const Search = () => {
       <div className='searchForm'> 
         <input type="text" placeholder='find a user' 
         onKeyDown={handlekey} 
-        onChange={event=>setUsername(event.target.value)}
+        onChange={event=>setUsername(event.target?.value)}
         value={username}/> 
       </div>
       {err && <span>user not found</span>}
-      {user && <div onClick={ () => handleSelect({uid:user.uid, photoURL: user.photoURL,name: user.name}) } className='userChat'>
-        <img src={ user.photoURL }></img>
+      {user && <div onClick={ () => handleSelect({uid:user?.uid, photoURL: user?.photoURL,name: user?.name}) } className='userChat'>
+        <img src={ user?.photoURL }></img>
         <div  className='userChatInfo'>
-          <span>{user.name}</span>
+          <span>{user?.name}</span>
         </div>
       </div>}
     </div>

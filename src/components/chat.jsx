@@ -17,7 +17,7 @@ const {data} = useContext(ChatContext)
 
       {data.chatId != "null" &&<div className="chatInfo">
         <div className='userInfo'>
-          {data.user.photoURL && <img src={data.user?.photoURL}></img>}
+          {data && <img src={data?.user?.photoURL}></img>}
           <span>{data.user?.name}</span>
         </div>
         <div className="chatIcons">

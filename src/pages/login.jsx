@@ -15,11 +15,11 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
 
-    event.preventDefault();
-    const email = event.target[0].value;
-    const password = event.target[1].value;
+    event?.preventDefault();
+    const email = event?.target[0]?.value;
+    const password = event?.target[1]?.value;
 
-    console.log(email)
+    //console.log(email)
 
     try {
       await signInWithEmailAndPassword(auth, email, password)
@@ -32,12 +32,12 @@ const Login = () => {
 
       const errorElement = document.getElementById('error');
 
-      console.log(errorElement);
+      //console.log(errorElement);
 
       if (errorElement) {
         errorElement.innerText = errorCode;
       }
-      console.error(errorMessage, errorCode)
+      //console.error(errorMessage, errorCode)
     }
   }
 

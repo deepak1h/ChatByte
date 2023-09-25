@@ -11,10 +11,10 @@
 
     padding-left: 15px;
     padding-right: 15px;
-    background: radial-gradient(var(--c4) 15%, transparent 16%) 0 0,
-    radial-gradient(var(--c4) 15%, transparent 16%) 8px 8px;
+    background: radial-gradient(var(--c2) 15%, transparent 16%) 0 0,
+    radial-gradient(var(--c2) 15%, transparent 16%) 20px 20px;
     background-color: var(--c3);
-    background-size: 10px 10px; 
+    background-size: 20px 20px;
 }
 
 .input input{

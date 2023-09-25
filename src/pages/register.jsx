@@ -17,12 +17,12 @@ const Register = () => {
   }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event?.preventDefault();
     //get all element from the form
-    const name = event.target[0].value;
-    const email = event.target[1].value;
-    const password = event.target[2].value;
-    const photo = event.target[3].files[0];
+    const name = event?.target[0]?.value;
+    const email = event?.target[1]?.value;
+    const password = event?.target[2]?.value;
+    const photo = event?.target[3]?.files[0];
 
     try {
 
@@ -60,34 +60,34 @@ const Register = () => {
         () => {
           // Upload completed successfully, now we can get the download URL
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            console.log('File available at', downloadURL);
+            //console.log('File available at', downloadURL);
 
             //update profile on irebase its firebase function
-            await updateProfile(result.user, {
+            await updateProfile(result?.user, {
               displayName: name,
               photoURL: downloadURL
             })
 
             //create users table in firebase and store user id name photo email
-            await setDoc(doc(db, "users", result.user.uid), {
-              uid: result.user.uid,
+            await setDoc(doc(db, "users", result?.user?.uid), {
+              uid: result?.user?.uid,
               name,
               email,
               photoURL: downloadURL,
             });
             //create userchats in db as key as uid
-            await setDoc(doc(db, "userChats", result.user.uid), {});
+            await setDoc(doc(db, "userChats", result?.user?.uid), {});
           });
         }
       );
       // if created then set error as false 
       setErr(false)
       //render accordingly
-      const successElement = document.getElementById('success-message');
+      const successElement = document.getElementById('success-message')
       if (successElement) {
         successElement.innerText = "you are registerd";
       }
-      console.log("success")
+      //console.log("success")
 
     }
     catch (error) {
@@ -99,7 +99,7 @@ const Register = () => {
       if (errorElement) {
         errorElement.innerText = errorCode;
       }
-      console.error(errorMessage, errorCode)
+      //console.error(errorMessage, errorCode)
     }
 
   }
