@@ -3,6 +3,7 @@
     align-items:start;
     padding: 10px;
     gap: 15px;
+   
 
     &.owner{
         flex-direction: row-reverse;

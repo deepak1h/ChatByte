@@ -1,6 +1,6 @@
 .messages{
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     background: radial-gradient(var(--c4) 15%, transparent 16%) 0 0,
     radial-gradient(var(--c4) 15%, transparent 16%) 8px 8px;
     background-color: var(--c3);
@@ -9,5 +9,15 @@
 }
 
 .messages::-webkit-scrollbar{
-    display: none;
+    width: 6px;
+    
 }
+
+::-webkit-scrollbar-thumb {
+    background: var(--c0);
+    border-radius: 25px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--c1);
+  }

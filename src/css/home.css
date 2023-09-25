@@ -54,7 +54,6 @@ body, html {
     width:70%;
     height: 90%;
     display: flex;
-    overflow: hidden;
     border: 20px double var(--cx);
     }
 

@@ -1,5 +1,4 @@
 .search{
-
     border: none;
     border-bottom: 1px solid var(--cx);
 }
@@ -11,23 +10,23 @@
     padding: 10px;
 }
 
+.searchForm{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
 .searchForm input{
-    
+    color: var(--c3);
+    outline: transparent;
     background-color: var(--c0);
     border-color: transparent;
-    outline-color: none;
-
-    padding: 5px 10px;
     width: 100%;
-    color: var(--c4);
-
-
+    padding: 5px 10px;
     &::placeholder{
         color: var(--lgr);
         font: var(--fnt);
     }
-
-
 }
 
 .userChat{
@@ -37,14 +36,29 @@
     gap: 10px;
     cursor: pointer;
     font-family: var(--fnt);
-    transition: transform 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    
     &:hover{
-
-        transform: scale(1.1);
+        transform: translateX(20px);
         background-color: var(--cx);
     }
 
 }
+
+
+/* @keyframes logoAnimation {
+    0% {
+        
+        transform: scale(1);
+        transform: translateX(20px);
+        
+    }
+    100% {
+      
+      transform: scale(1.5);
+      transform: translateX(20px); 
+    }
+  } */
 
 
 

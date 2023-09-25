@@ -3,6 +3,6 @@
   display: flex;
   background-color:var(--c0);
   flex-direction: column;
-  border-radius: 25px;
+  border-radius: 30px;
   border-bottom-right-radius: 0px;
 }

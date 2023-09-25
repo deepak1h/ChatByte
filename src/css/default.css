@@ -1,0 +1,58 @@
+.nouser{
+    height: 100%;
+
+    border-radius: 0px 30px 30px 0px;
+    
+    background: radial-gradient(var(--c2) 15%, transparent 16%) 0 0,
+    radial-gradient(var(--c2) 15%, transparent 16%) 20px 20px;
+    background-color: var(--c3);
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s smooth;
+}
+
+.nouser span{
+    font: var(--fnt);
+    font-size: 50px;
+    color: var(--c0);
+}
+
+.nouser img {
+    width: 100px;
+    height: 100px;
+
+    &:hover {
+        animation: dance 1s infinite;
+        transform: scale(1.1)
+    }
+    
+}
+
+
+@keyframes dance {
+    0%,35%, 100% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(1.2);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      65% {
+        transform: scale(1);
+      }
+}
+
+
