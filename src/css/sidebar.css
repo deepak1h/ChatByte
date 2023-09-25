@@ -1,6 +1,8 @@
 .sidebar {
   flex: 1;
   display: flex;
-  background-color:#5b598e;
+  background-color:var(--c0);
   flex-direction: column;
+  border-radius: 25px;
+  border-bottom-right-radius: 0px;
 }

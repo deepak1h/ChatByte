@@ -9,6 +9,10 @@ const Login = () => {
   const [error, setErr] = useState(false);
   const navigate = useNavigate();
 
+  const handlekey = (event)=>{
+    event.code === 'Enter' && handleSubmit()
+  }
+
   const handleSubmit = async (event) => {
 
     event.preventDefault();
@@ -44,16 +48,18 @@ const Login = () => {
           <img src={Logo} alt="" />
           <span className="logo">ChatByte</span>
         </div>
-        <span className="title">Login</span>
-        <form onSubmit={handleSubmit}>
-          <input required type="email" placeholder="email" />
-          <input required type="password" placeholder="password" />
-          <button>Sign in</button>
-          <span id="error" className="errorMessage"></span>
-        </form>
-        <p>
-          You don't have an account? <Link to="/register">Signup</Link>
-        </p>
+        <div className="boddy">
+          <span className="title">Login</span>
+          <form onKeyDown={handlekey} onSubmit={handleSubmit}>
+            <input required type="email" placeholder="email" />
+            <input required type="password" placeholder="password" />
+            <button>Sign in</button>
+            <span id="error" className="errorMessage"></span>
+          </form>
+          <p>
+            You don't have an account? <Link to="/register">Signup</Link>
+          </p>
+        </div>
       </div>
     </div>
   )

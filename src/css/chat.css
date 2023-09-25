@@ -1,5 +1,5 @@
 .chat{
-    flex: 2;
+    flex: 2.2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -8,25 +8,28 @@
 .chatInfo{
     display: flex;
     justify-content: space-between;
-    background-color: #706eae;
+    background-color: var(--c1);
     align-items: center;
     height: 50px;
     padding-left: 10px;
-    color: white;
-    font-family: 'Segoe UI';
+    color: var(--cx);
+    font-weight: bold;
+    font-family: var(--fnt);
 }
 
 .chatIcons{
-    padding: 10px;
+    padding: 15px;
     display: flex;
-    gap: 10px;
-
 }
 .chatIcons img{
     padding: 10px;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     object-fit: cover;
-    border-radius: 50%;
+    transition: transform 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);
 
 }
+
+.chatIcons :hover {
+    transform: scale(1.3);
+  }

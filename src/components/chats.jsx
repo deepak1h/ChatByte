@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Profile from '../image/profile.png'
 import '../css/chats.css'
 import {AuthContext} from "../context/authContext"
 import { doc, onSnapshot } from 'firebase/firestore'

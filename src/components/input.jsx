@@ -19,6 +19,10 @@ const Input = () => {
   
   const storageRef = ref(storage, 'data/' + uuid());
 
+  const handlekey = (event)=>{
+    event.code === 'Enter' && handleSend()
+  }
+
   const handleSend = async ()=>{
     
     if(file){
@@ -109,11 +113,11 @@ const Input = () => {
 
   return (
     <div className='input'>
-        <input type="text" placeholder='type...' 
+        <input onKeyDown={handlekey} type="text" placeholder='type...' 
         onChange={event=>setText(event.target.value)}
         value={text}
         /> 
-        <div className="send">
+        <div onKeyDown={handlekey} className="send">
           <img src={Attach} alt=""  />
           <input style={{ display: "none" }} type="file" id="file" onChange={event=>setImg(event.target.files[0])} />
           <label htmlFor="file">

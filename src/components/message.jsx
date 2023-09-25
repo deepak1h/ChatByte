@@ -10,8 +10,25 @@ const Message = ({message}) => {
 
   const ref = useRef();
 
+  function downloadImage(imageUrl) {
+    const timestamp = new Date().getTime(); // Get current timestamp
+    const imageName = `chatbyte_${timestamp}.jpg`; // Construct the filename
+    console.log(imageUrl,imageName);
+    const anchor = document.createElement('a');
+    anchor.href = imageUrl;
+    anchor.download = imageName;
+    anchor.style.display = 'none'; // Hide the anchor element
+    document.body.appendChild(anchor);
+    anchor.click();
+  }
+
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
+    ref.current.style.animation = 'bounce 0.5s';
+    setTimeout(() => {
+      ref.current.style.animation = '';
+    }, 500);
+    
   }, [message]);
 
   console.log(message)
@@ -45,7 +62,7 @@ const formattedTime = getFormattedTime(message.date);
         <span>{formattedTime}</span>
       </div>
       <div className="messageData">
-        {message.img &&<img src={message.img} alt="" />}
+        {message.img &&<img onClick={()=> downloadImage(message.img)} src={message.img} alt="" />}
         {message.text &&<p>{message.text}</p>}
       </div>
     </div>

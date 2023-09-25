@@ -1,9 +1,11 @@
 .messages{
-    background-color: rgb(207, 197, 246);
     height: 100%;
     overflow: scroll;
+    background: radial-gradient(var(--c4) 15%, transparent 16%) 0 0,
+    radial-gradient(var(--c4) 15%, transparent 16%) 8px 8px;
+    background-color: var(--c3);
+    background-size: 10px 10px; 
 
-    
 }
 
 .messages::-webkit-scrollbar{

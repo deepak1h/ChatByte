@@ -12,6 +12,10 @@ const Register = () => {
   const [error, setErr] = useState(false);
   const [success, setSuc] = useState(false);
 
+  const handlekey = (event)=>{
+    event.code === 'Enter' && handleSubmit()
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     //get all element from the form
@@ -107,23 +111,26 @@ const Register = () => {
           <img src={Logo} alt="" />
           <span className="logo">ChatByte</span>
         </div>
-        <span className="title">Register</span>
-        <form onSubmit={handleSubmit}>
-          <input required type="text" placeholder="name" />
-          <input required type="email" placeholder="email" />
-          <input required type="password" placeholder="password" />
-          <input required style={{ display: "none" }} type="file" id="file" />
-          <label htmlFor="file">
-            <img src={Photo} alt="" />
-            <span>upload profile photo</span>
-          </label>
-          <button>Sign up</button>
-          {error && <span id="error-message" className="errorMessage"></span>}
-          {success && <span id="success-message" className="successMessage"></span>}
-        </form>
-        <p>
-          You do have an account?  <Link to="/login">Login</Link>
-        </p>
+        <div className="boddy">
+          <span className="title">Register</span>
+          <form onKeyDown={handlekey} onSubmit={handleSubmit}>
+            <input required type="text" placeholder="name" />
+            <input required type="email" placeholder="email" />
+            <input required type="password" placeholder="password" />
+            <input required style={{ display: "none" }} type="file" id="file" />
+            <label htmlFor="file">
+              <img src={Photo} alt="" />
+              <span style={{color:"#ff0000"}}>*</span>
+              <span>upload profile photo</span>
+            </label>
+            <button>Sign up</button>
+            {error && <span id="error-message" className="errorMessage"></span>}
+            {success && <span id="success-message" className="successMessage"></span>}
+          </form>
+          <p>
+            You do have an account?  <Link to="/login">Login</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
