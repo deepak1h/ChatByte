@@ -8,7 +8,6 @@ import { ChatContext } from '../context/chatContext'
 const Chats = () => {
 
   const [chats, setChats] = useState({})
-
   const {currentUser} = useContext(AuthContext)
   const {dispatch} = useContext(ChatContext)
 
@@ -18,7 +17,7 @@ const Chats = () => {
 
       const unsubscribe = onSnapshot(doc(db,"userChats", currentUser.uid), (doc)=>{
       setChats(doc.data())
-      console.log("doc", doc)
+      // console.log("doc", doc)
     })
 
     return () => {
@@ -27,14 +26,15 @@ const Chats = () => {
   };
 
     currentUser.uid && getChats()
+    //console.log(currentUser,chats.photoURL)
 
   },[currentUser.uid]) 
 
-  console.log("chats: ",chats)
+  // console.log("chats: ",chats)
 
   const handleSelect = (userinfo) => {
-    console.log("selected")
-    console.log(userinfo)
+    // console.log("selected")
+    // console.log(userinfo)
     dispatch({type: "CHANGE_USER", payload: userinfo})
   }
 
@@ -42,11 +42,11 @@ const Chats = () => {
 
     <div className='chats'>  
       {chats && Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map(([chatId, chatData]) =>(
-        <div className='userChat' key={chatId} onClick={ () => handleSelect(chatData.userInfo)}>
-          <img src={chatData.userInfo.photoURL}></img>
+        <div className='userChat' key={chatId} onClick={ () => handleSelect(chatData?.userInfo)}>
+          <img src={chatData?.userInfo?.photoURL}></img>
           <div className='userChatInfo'>
-            <span >{chatData.userInfo.name}</span>
-            <p>{chatData.lastMessage?.text}</p>
+            <span >{chatData?.userInfo?.name}</span>
+            <p>{chatData?.lastMessage?.text}</p>
           </div>
         </div>
       ))}  
