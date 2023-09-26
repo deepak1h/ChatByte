@@ -1,5 +1,5 @@
 .chat{
-    flex: 2.2;
+    width: calc(100% - 265px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,6 +11,8 @@
     gap:10px
     
 }
+
+
 
 .chatInfo{
     display: flex;
@@ -58,4 +60,32 @@
         transform: scale(1.3);
       }
 
+}
+
+
+/* Media query for screens with a maximum width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+
+    .chat{
+        width: calc(100% - 80px);
+    }
+
+    .chatIcons {
+
+        .cam{
+            display: none;
+        } 
+        .add{
+            display: none;
+        }
+    }
+    .chatInfo img{
+
+        transition: transform 0.1s cubic-bezier(0.5, 0.1, 0.5, 1);
+    
+        &:hover {
+          transform: scale(1.3);
+        }
+    }
+  
 }

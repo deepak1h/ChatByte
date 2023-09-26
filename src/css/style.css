@@ -148,3 +148,17 @@
     color: rgb(38, 200, 10);
     font-family: var(--fnt);
   }
+
+
+
+/* Media query for screens with a maximum width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+ 
+.formWrapper {
+    padding: 50px;
+    gap:10px;
+    flex-direction: column;
+  }
+}
+ 
+  

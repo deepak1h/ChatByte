@@ -1,6 +1,27 @@
 .chats {
     overflow-y:scroll ;
 }
+
+.userChatInfo {
+    max-width: calc(100% - 50px);
+    overflow: hidden;
+}
+
+.userChat{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+}
+
 .chats::-webkit-scrollbar { 
-    display: none; 
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .chats{
+        overflow-x:visible;
+    }
+  
 }

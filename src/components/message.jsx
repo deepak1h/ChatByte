@@ -85,7 +85,7 @@ const formattedTime = getFormattedTime(message?.date);
       </div>
       <div className="messageData">
         {message.img &&<img onClick={()=> downloadImage(message?.img)} src={message?.img} alt="" />}
-        {message.text &&<p>{message?.text}</p>}
+        {message.text != "" && <p>{message?.text}</p>}
       </div>
     </div>
   )

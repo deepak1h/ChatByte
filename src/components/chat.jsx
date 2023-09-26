@@ -21,9 +21,9 @@ const {data} = useContext(ChatContext)
           <span>{data.user?.name}</span>
         </div>
         <div className="chatIcons">
-          <img src={Cam} alt="" />
-          <img src={Add} alt="" />
-          <img src={More} alt="" />
+          <img className='cam' src={Cam} alt="" />
+          <img className='add' src={Add} alt="" />
+          <img className='more' src={More} alt="" />
         </div>
       </div>}
       {data.chatId != "null" && <Messages/>}
