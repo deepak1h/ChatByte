@@ -11,17 +11,31 @@ const Message = ({message}) => {
 
   const ref = useRef();
 
-  function downloadImage(imageUrl) {
-    const timestamp = new Date().getTime(); // Get current timestamp
-    const imageName = `chatbyte_${timestamp}.jpg`; // Construct the filename
-    // console.log(imageUrl,imageName);
-    const anchor = document.createElement('a');
-    anchor.href = imageUrl;
-    anchor.download = imageName;
-    anchor.style.display = 'none'; // Hide the anchor element
-    document.body.appendChild(anchor);
-    anchor.click();
-  }
+
+//   function downloadImage(imageUrl) {
+//     const timestamp = new Date().getTime(); // Get current timestamp
+//     const imageName = `chatbyte_${timestamp}.jpg`; // Construct the filename
+//     console.log(imageName)
+//   // Create an anchor element
+//   const anchor = document.createElement('a');
+//   anchor.href = imageUrl;
+//   anchor.download = imageName; // Set the download attribute to specify the filename
+//   anchor.style.display = 'none'; // Hide the anchor element
+//   document.body.appendChild(anchor);
+
+//   // Trigger a click event on the anchor element to start the download
+//   anchor.click();
+
+//   // Remove the anchor element from the DOM
+//   document.body.removeChild(anchor);
+// }
+
+
+function zoomImage(event) {
+  event.currentTarget.classList.toggle('zoomed');
+}
+
+
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -84,7 +98,18 @@ const formattedTime = getFormattedTime(message?.date);
         <span>{formattedTime}</span>
       </div>
       <div className="messageData">
-        {message.img &&<img onClick={()=> downloadImage(message?.img)} src={message?.img} alt="" />}
+        {/* {message.img &&<img onClick={()=> downloadImage(message?.img)} src={message?.img} alt="" />} */}
+
+
+          {message.img && (
+            <img
+              onClick={(e) => zoomImage(e)}
+              src={message.img}
+              alt=""
+              className="zoomable-image"
+            />
+          )}
+
         {message.text != "" && <p>{message?.text}</p>}
       </div>
     </div>

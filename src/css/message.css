@@ -42,7 +42,7 @@
 }
 
 .messageInfo span{
-    font-size: 8px;
+    font-size: 7px;
     font-weight: bold;
     color: var(--c1);
 }
@@ -52,7 +52,6 @@
     border-radius: 50%;
     width: 30px;
     height: 30px;
-
     border: 1px solid var(--c2);
     
 }
@@ -81,8 +80,19 @@
     background-color: var(--c4);
     border-top-left-radius: 0px;
     cursor: pointer;
+
+
 }
 
+.zoomable-image {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Adjust the duration and easing as needed */
+
+    &.zoomed {
+        transform: scale(2); /* Adjust the zoom level as needed */
+      }
+  }
+  
 @keyframes bounce {
     0%, 20%, 80%, 100% {
       transform: translateY(0);
