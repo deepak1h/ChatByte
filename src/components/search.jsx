@@ -33,7 +33,7 @@ const Search = () => {
   }
 
   const handlekey = (event)=>{
-    event.code === 'Enter' && handlesearch()
+    (event.code === 'Enter' || event.keyCode===13) && handlesearch()
   }
 
   const handleSelect = async (userinfo) => {

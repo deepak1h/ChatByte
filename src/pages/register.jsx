@@ -13,7 +13,7 @@ const Register = () => {
   const [success, setSuc] = useState(false);
 
   const handlekey = (event)=>{
-    event.code === 'Enter' && handleSubmit()
+    (event.code === 'Enter' || event.keyCode===13) && handleSubmit()
   }
 
   const handleSubmit = async (event) => {

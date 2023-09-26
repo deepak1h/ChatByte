@@ -20,7 +20,7 @@ const Input = () => {
   const storageRef = ref(storage, 'data/' + uuid());
 
   const handlekey = (event)=>{
-    (event.code === 'Enter' || event.code === '13') && handleSend()
+    (event.code === 'Enter' || event.keyCode===13) && handleSend()
   }
 
   const handleSend = async ()=>{

@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handlekey = (event)=>{
-    event.code === 'Enter' && handleSubmit()
+    (event.code === 'Enter' || event.keyCode===13) && handleSubmit()
   }
 
   const handleSubmit = async (event) => {
