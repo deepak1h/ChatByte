@@ -1,6 +1,6 @@
 # ChatByte - Secure Chat Web Application
 
-ChatByte is a secure web application that allows users to register, log in securely, and engage in real-time chat conversations with other users. This README file provides an overview of the project, its features, and instructions on how to set it up.
+ChatByte is a secure web application that allows users to register, log in securely, and engage in real-time chat conversations with other users. This README file provides an overview of the project, its features, and instructions on how to set it up. you can visit it [Here](https://chatbyte-iith.000webhostapp.com/).
 
 ## Table of Contents
 - [Features](#features)
@@ -10,6 +10,13 @@ ChatByte is a secure web application that allows users to register, log in secur
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
+
+## UI
+<div align="center">
+  <img src="Screenshot 2023-12-01 173551.png" alt="Before">
+</div>
+
+![Live test](output.gif)
 
 ## Features
 
